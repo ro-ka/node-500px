@@ -1,6 +1,6 @@
-## node-500px
+# node-500px
 
-A wrapper for the [500px](http://500px.com) API. At the moment only the functions without Auth are supported. Check out the [500px API page](http://developers.500px.com/)
+A wrapper for the [500px](http://500px.com) API. At the moment only the functions without Auth are supported. Check out the [500px API page](http://developers.500px.com/).
 
 ## LICENSE
 
