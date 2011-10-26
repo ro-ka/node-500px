@@ -1,0 +1,28 @@
+{
+	"name":"node-500px",
+	"description":"A wrapper for the 500px.com API",
+	"keywords" : [
+		"api",
+		"500px"
+	],
+	"version":"0.2.0",
+	"homepage":"http://github.com/ro-ka/node-500px",
+	"repository":"git://github.com/ro-ka/node-500px.git",
+	"author" : {
+		"name" : "Robert Katzki",
+		"email" : "robert@katzki.de",
+		"url" : "http://katzki.de/"
+	},
+	"main":"./lib/api500px.js",
+
+	"dependencies":{},
+	"engines":{
+		"node":">= 0.4.0"
+	},
+	"licenses":[
+		{
+			"type":"MIT",
+			"url":"http://github.com/ro-ka/node-500px/raw/master/LICENSE"
+		}
+	]
+}
