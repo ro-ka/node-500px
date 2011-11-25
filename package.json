@@ -14,6 +14,9 @@
 		"url" : "http://katzki.de/"
 	},
 	"main":"./lib/api500px.js",
+    "scripts": {
+        "test": "make test"   
+    },
 
 	"dependencies":{},
 	"engines":{
