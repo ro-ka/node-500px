@@ -1,23 +1,25 @@
 {
 	"name":"500px",
 	"description":"A wrapper for the 500px.com API",
-	"keywords" : [
+	"keywords":[
 		"api",
 		"500px"
 	],
 	"version":"0.3.1",
-	"homepage":"http://github.com/ro-ka/node-500px",
+	"homepage":"http://ro-ka.github.com/node-500px/",
 	"repository":"git://github.com/ro-ka/node-500px.git",
-	"author" : {
-		"name" : "Robert Katzki",
-		"email" : "robert@katzki.de",
-		"url" : "http://katzki.de/"
+	"author":{
+		"name":"Robert Katzki",
+		"email":"robert@katzki.de",
+		"url":"http://katzki.de/"
 	},
 	"main":"./lib/api500px.js",
-    "scripts": {
-        "test": "make test"   
-    },
-
+	"scripts":{
+		"test":"make test"
+	},
+	"devDependencies":{
+		"vows":">= 0.6.x"
+	},
 	"dependencies":{},
 	"engines":{
 		"node":">= 0.4.0"
