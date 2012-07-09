@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Node-500px by ro-ka</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Node-500px</h1>
+          <h2>A wrapper for the 500px.com API</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/ro-ka/node-500px/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/ro-ka/node-500px/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/ro-ka/node-500px" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>node-500px.</h1>
+
+<p>This plugin is a wrapper for the API of <a href="http://500px.com">500px.com</a>. To get more details on what the API offers, go to <a href="http://developer.500px.com/">developer.500px.com</a>.</p>
+
+<h2>Install</h2>
+
+<p>The easiest way is to install through npm:</p>
+
+<div class="highlight">
+<pre>npm install 500px
+</pre>
+</div>
+
+
+<p>Of course you can also clone via git or download the .zip or .tar.gz via the links above.</p>
+
+<h2>Getting started</h2>
+
+<p>Include the module in your project and initialize it:</p>
+
+<div class="highlight">
+<pre><span class="kd">var</span> <span class="nx">API500px</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'500px'</span><span class="p">).</span><span class="nx">API500px</span><span class="p">,</span>
+    <span class="nx">api500px</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">API500px</span><span class="p">(</span><span class="nx">consumer_key</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<p>Now you are ready to do some calls to the 500px.com API!</p>
+
+<h2>GET photos</h2>
+
+<p>To retrieve photos, just do the following:</p>
+
+<div class="highlight">
+<pre><span class="nx">api500px</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">getPopular</span><span class="p">({</span><span class="s1">'sort'</span><span class="o">:</span> <span class="s1">'created_at'</span><span class="p">,</span> <span class="s1">'rpp'</span><span class="o">:</span> <span class="s1">'100'</span><span class="p">},</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Error!</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Do something</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre>
+</div>
+
+
+<p>Choose on of the funtions to get photos:</p>
+
+<ul>
+<li><code>getById (photo_id, arguments, callback)</code></li>
+<li><code>getByUsername (username, arguments, callback)</code></li>
+<li><code>getByUserId (user_id, arguments, callback)</code></li>
+<li><code>getFavoritesByUsername (username, arguments, callback)</code></li>
+<li><code>getFavoritesByUserId (user_id, arguments, callback)</code></li>
+<li><code>getFriendsByUsername (username, arguments, callback)</code></li>
+<li><code>getFriendsByUserId (user_id, arguments, callback)</code></li>
+<li><code>getPopular (arguments, callback)</code></li>
+<li><code>getUpcoming (arguments, callback)</code></li>
+<li><code>getEditorsChoice (arguments, callback)</code></li>
+<li><code>getFreshToday (arguments, callback)</code></li>
+<li><code>getFreshYesterday (arguments, callback)</code></li>
+<li><code>getFreshWeek (arguments, callback)</code></li>
+<li><code>searchByTag (tag, arguments, callback)</code></li>
+<li><code>searchByTerm (term, arguments, callback)</code></li>
+</ul><p>For more information on the possible arguments, please check the <a href="http://developer.500px.com/docs/photos-index">500px.com photos API</a></p>
+
+<h2>GET users</h2>
+
+<p>To retrieve users, just do the following:</p>
+
+<div class="highlight">
+<pre><span class="nx">api500px</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="mi">1234</span><span class="p">,</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Error!</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Do something</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre>
+</div>
+
+
+<p>Choose on of the funtions to get users:</p>
+
+<ul>
+<li><code>getById (id, callback)</code></li>
+<li><code>getByName (username, callback)</code></li>
+<li><code>getByEmail (email, callback)</code></li>
+<li><code>getFriendsById (id, arguments, callback)</code></li>
+</ul><p>For more information on the possible arguments, please check the <a href="http://developer.500px.com/docs/users-index">500px.com users API</a></p>
+
+<h2>GET blogs</h2>
+
+<p>To retrieve blogs, just do the following:</p>
+
+<div class="highlight">
+<pre><span class="nx">api500px</span><span class="p">.</span><span class="nx">blogs</span><span class="p">.</span><span class="nx">getFresh</span><span class="p">({</span><span class="nx">rpp</span><span class="o">:</span> <span class="mi">50</span><span class="p">},</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Error!</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Do something</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre>
+</div>
+
+
+<p>Choose on of the funtions to get blogs:</p>
+
+<ul>
+<li><code>getById (id, arguments, callback)</code></li>
+<li><code>getCommentsById (id, arguments, callback)</code></li>
+<li><code>getFresh (arguments, callback)</code></li>
+<li><code>getByUsername (username, arguments, callback)</code></li>
+<li><code>getByUserId (user_id, arguments, callback)</code></li>
+</ul><p>For more information on the possible arguments, please check the <a href="http://developer.500px.com/docs/blogs-index">500px.com blogs API</a></p>
+        </section>
+
+        <footer>
+          Node-500px is maintained by <a href="https://github.com/ro-ka">ro-ka</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+                  <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-31560607-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+      </div>
+    </div>
+  </body>
+</html>
