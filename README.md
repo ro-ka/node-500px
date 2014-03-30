@@ -1,6 +1,6 @@
 # node-500px
 
-[![NPM version](https://badge.fury.io/js/500px.png)](http://badge.fury.io/js/500px) [![Dependency Status](https://gemnasium.com/ro-ka/node-500px.png)](https://gemnasium.com/ro-ka/node-500px)
+[![NPM version](https://badge.fury.io/js/500px.png)](http://badge.fury.io/js/500px)
 
 This plugin is a wrapper for the API of [500px.com](http://500px.com). To get more details on what the API offers, go to [developer.500px.com](http://developer.500px.com/).
 
