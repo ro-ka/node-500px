@@ -23,11 +23,12 @@ Now you are ready to do some calls to the 500px.com API!
 To retrieve photos, just do the following:
 ```javascript
 api500px.photos.getPopular({'sort': 'created_at', 'rpp': '100'},  function(error, results) {
-    if (error) {
-        // Error!
-    } else {
-        // Do something
-    }
+  if (error) {
+    // Error!
+    return;
+  }
+  
+  // Do something
 });
 ``` 
 
@@ -54,11 +55,12 @@ For more information on the possible arguments, please check the [500px.com phot
 To retrieve users, just do the following:
 ```javascript
 api500px.users.getById(1234,  function(error, results) {
-    if (error) {
-        // Error!
-    } else {
-        // Do something
-    }
+  if (error) {
+    // Error!
+    return;
+  }
+  
+  // Do something
 });
 ``` 
 
@@ -74,11 +76,12 @@ For more information on the possible arguments, please check the [500px.com user
 To retrieve blogs, just do the following:
 ```javascript
 api500px.blogs.getFresh({rpp: 50},  function(error, results) {
-    if (error) {
-        // Error!
-    } else {
-        // Do something
-    }
+  if (error) {
+    // Error!
+    return;
+  }
+  
+  // Do something
 });
 ``` 
 
