@@ -12,7 +12,7 @@ npm install 500px
 Of course you can also clone via git or download the .zip or .tar.gz via the links above.
 
 ## Getting started
-Include the module in your project and initialize it:
+Include the module in your project and initialize it. **Important**: Use the consumer key provided by 500px, not the JavaScript SDK key, as that is different!
 ```javascript
 var API500px = require('500px').API500px,
     api500px = new API500px(consumer_key);
