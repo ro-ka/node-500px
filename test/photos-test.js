@@ -2,7 +2,7 @@
 
 var should = require('should'),
   config = require('./config.js'),
-  Photos = require('../lib/photos.js').Photos;
+  Photos = require('../lib/photos.js');
 
 describe('Testing GET photos:', function() {
   var photos = new Photos(config.secrets.consumer_key),
