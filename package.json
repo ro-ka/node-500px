@@ -15,9 +15,14 @@
   },
   "main": "./lib/api500px.js",
   "scripts": {
-    "test": "make test"
+    "lint": "./node_modules/.bin/jshint .",
+    "pretest": "npm run-script lint",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test",
+    "posttest": "./node_modules/.bin/istanbul check-coverage && rm -rf coverage",
+    "prepublish": "npm test && npm prune"
   },
   "devDependencies": {
+    "istanbul": "^0.3.0",
     "jshint": "^2.5.5",
     "mocha": "^1.21.4",
     "should": "^4.0.4"

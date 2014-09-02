@@ -1,5 +1,6 @@
-var mocha = require('mocha'),
-  should = require('should'),
+/* global describe, it */
+
+var should = require('should'),
   config = require('./config.js'),
   Blogs = require('../lib/blogs.js').Blogs;
 

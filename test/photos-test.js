@@ -1,5 +1,6 @@
-var mocha = require('mocha'),
-  should = require('should'),
+/* global describe, it */
+
+var should = require('should'),
   config = require('./config.js'),
   Photos = require('../lib/photos.js').Photos;
 
@@ -48,14 +49,18 @@ describe('Testing GET photos:', function() {
 
   describe('#getFavoritesByUsername()', function() {
     it('should return a json with photos', function(done) {
-      photos.getFavoritesByUsername(user_name, {'rpp': 7}, function(err, result) {
-        should.not.exist(err);
-        should.exist(result);
-        result.should.have.property('photos');
-        result.photos.should.have.lengthOf(7);
+      photos.getFavoritesByUsername(
+        user_name,
+        { 'rpp': 7 },
+        function(err, result) {
+          should.not.exist(err);
+          should.exist(result);
+          result.should.have.property('photos');
+          result.photos.should.have.lengthOf(7);
 
-        done();
-      });
+          done();
+        }
+      );
     });
   });
 

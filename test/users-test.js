@@ -1,5 +1,6 @@
-var mocha = require('mocha'),
-  should = require('should'),
+/* global describe, it */
+
+var should = require('should'),
   config = require('./config.js'),
   Users = require('../lib/users.js').Users;
 
