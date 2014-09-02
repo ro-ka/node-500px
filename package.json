@@ -5,7 +5,7 @@
     "api",
     "500px"
   ],
-  "version": "0.3.2",
+  "version": "0.4.0",
   "homepage": "http://ro-ka.github.com/node-500px/",
   "repository": "git://github.com/ro-ka/node-500px.git",
   "author": {
