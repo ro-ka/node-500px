@@ -8,17 +8,17 @@ describe('Testing GET blogs:', function() {
     user_id = config.secrets.user_id,
     user_name = config.secrets.user_name;
 
-  // describe('#getById()', function() {
-  //   it('should return a json with the blog data', function(done) {
-  //     blogs.getById(1704, {}, function(err, result) {
-  //       should.not.exist(err);
-  //       should.exist(result);
-  //       result.should.have.property('body');
+  describe('#getById()', function() {
+    it('should return a json with the blog data', function(done) {
+      blogs.getById(27105, {}, function(err, result) {
+        should.not.exist(err);
+        should.exist(result);
+        result.should.have.property('body');
 
-  //       done();
-  //     });
-  //   });
-  // });
+        done();
+      });
+    });
+  });
 
   describe('#getCommentsById()', function() {
     it('should return a json with the blog comments', function(done) {
