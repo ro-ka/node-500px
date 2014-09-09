@@ -1,4 +1,13 @@
-test:
-	@./node_modules/.bin/mocha --timeout 10000 --reporter spec
+build:
+	cp -R lib src
+	coffee -c lib
+	find lib -iname "*.coffee" -exec rm '{}' ';'
 
-.PHONY: test
+unbuild:
+	rm -rf lib
+	mv src lib
+
+publish:
+	make build
+	npm publish .
+	make unbuild
