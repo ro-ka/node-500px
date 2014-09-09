@@ -9,28 +9,28 @@ describe 'Testing GET users:', ->
   user_email = config.secrets.user_email
 
   it '#getById() should return a json with the user data', (done) ->
-    users.getById user_id, {}, (err, result) ->
+    users.getById user_id, (err, result) ->
       should.not.exist(err)
       should.exist(result)
       result.should.have.property('user')
       done()
 
   it '#getByName() should return a json with the user data', (done) ->
-    users.getByName user_name, {}, (err, result) ->
+    users.getByName user_name, (err, result) ->
       should.not.exist(err)
       should.exist(result)
       result.should.have.property('user')
       done()
 
   it '#getByEmail() should return a json with the user data', (done) ->
-    users.getByEmail user_email, {}, (err, result) ->
+    users.getByEmail user_email, (err, result) ->
       should.not.exist(err)
       should.exist(result)
       result.should.have.property('user')
       done()
 
   it '#getFriendsById() should return a json with the friends data', (done) ->
-    users.getFriendsById user_id, {}, (err, result) ->
+    users.getFriendsById user_id, (err, result) ->
       should.not.exist(err)
       should.exist(result)
       result.should.have.property('friends')

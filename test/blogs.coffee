@@ -8,21 +8,21 @@ describe 'Testing GET blogs:', ->
   user_name = config.secrets.user_name
 
   it '#getById() should return a json with the blog data', (done) ->
-    blogs.getById 27105, {}, (err, result) ->
+    blogs.getById 27105, (err, result) ->
       should.not.exist(err)
       should.exist(result)
       result.should.have.property('body')
       done()
 
   it '#getCommentsById() should return a json with the blog comments', (done) ->
-    blogs.getCommentsById 1704, {}, (err, result) ->
+    blogs.getCommentsById 1704, (err, result) ->
       should.not.exist(err)
       should.exist(result)
       result.should.have.property('comments')
       done()
 
   it '#getFresh() should return a json with the freshest blogs data', (done) ->
-    blogs.getFresh {'rpp': '10'}, (err, result) ->
+    blogs.getFresh { 'rpp': '10' }, (err, result) ->
       should.not.exist(err)
       should.exist(result)
       result.should.have.property('blog_posts')
@@ -30,14 +30,14 @@ describe 'Testing GET blogs:', ->
       done()
 
   it '#getByUsername() should return a json with the blog data', (done) ->
-    blogs.getByUsername user_name, {}, (err, result) ->
+    blogs.getByUsername user_name, (err, result) ->
       should.not.exist(err)
       should.exist(result)
       result.should.have.property('blog_posts')
       done()
 
   it '#getByUserId() should return a json with the blog data', (done) ->
-    blogs.getByUserId user_id, {}, (err, result) ->
+    blogs.getByUserId user_id, (err, result) ->
       should.not.exist(err)
       should.exist(result)
       result.should.have.property('blog_posts')
