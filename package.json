@@ -13,23 +13,21 @@
     "email": "robert@katzki.de",
     "url": "http://katzki.de/"
   },
-  "main": "./lib/api500px.js",
+  "main": "lib",
   "scripts": {
-    "lint": "./node_modules/.bin/jshint .",
-    "pretest": "npm run-script lint",
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test",
-    "posttest": "./node_modules/.bin/istanbul check-coverage && rm -rf coverage",
+    "lint": "find lib/ -name '*.coffee' | xargs coffeelint",
+    "pretest": "npm run lint",
+    "test": "make build && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test",
+    "posttest": "./node_modules/.bin/istanbul check-coverage && rm -rf coverage && make unbuild",
     "prepublish": "npm test && npm prune"
   },
   "devDependencies": {
+    "coffee-script": "^1.8.0",
+    "coffeelint": "^1.6.0",
     "istanbul": "^0.3.0",
     "jshint": "^2.5.5",
     "mocha": "^1.21.4",
     "should": "^4.0.4"
-  },
-  "dependencies": {},
-  "engines": {
-    "node": ">= 0.4.0"
   },
   "licenses": [
     {
