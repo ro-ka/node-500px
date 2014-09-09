@@ -1,23 +1,22 @@
 https = require 'https'
+url   = require 'url'
 
 class Request
 
   constructor: (@consumer_key) ->
-    @baseUrl = '/v1/'
+    @pathname = '/v1/'
     @host = 'api.500px.com'
 
-  get: (url, params = {}, cb) ->
-    paramString = ''
-    operator = '?'
-
+  get: (path, params = {}, cb) ->
     params.consumer_key = @consumer_key
 
-    for k, v of params
-      if k
-        paramString += "#{operator}#{k}=#{v}"
-        if operator is '?' then operator = '&'
+    req_url = url.format
+      protocol: 'https'
+      host: @host
+      pathname: "#{@pathname}/#{path}"
+      query: params
 
-    https.get { host: @host, path: "#{@baseUrl}#{url}#{paramString}" }, (res) ->
+    https.get req_url, (res) ->
       if res.statusCode and res.statusCode is 200
         chunks = ''
         res.on('data', (resultData) -> chunks += resultData)
