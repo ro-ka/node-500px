@@ -13,7 +13,7 @@
     "email": "robert@katzki.de",
     "url": "http://katzki.de/"
   },
-  "main": "./lib/api500px.js",
+  "main": "lib",
   "scripts": {
     "lint": "./node_modules/.bin/jshint .",
     "pretest": "npm run-script lint",
