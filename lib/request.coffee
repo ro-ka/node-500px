@@ -8,7 +8,7 @@ class Request
     @pathname = '/v1/'
     @host = 'api.500px.com'
 
-  get: (path, params = {}) ->
+  get: (path, params) ->
     deferred = W.defer()
     params.consumer_key = @consumer_key
 
