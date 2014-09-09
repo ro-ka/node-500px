@@ -17,8 +17,8 @@
   "scripts": {
     "lint": "find lib/ -name '*.coffee' | xargs coffeelint",
     "pretest": "npm run lint",
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test",
-    "posttest": "./node_modules/.bin/istanbul check-coverage && rm -rf coverage",
+    "test": "make build && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test",
+    "posttest": "./node_modules/.bin/istanbul check-coverage && rm -rf coverage && make unbuild",
     "prepublish": "npm test && npm prune"
   },
   "devDependencies": {
