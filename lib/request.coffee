@@ -1,5 +1,6 @@
 https = require 'https'
 url   = require 'url'
+W     = require 'when'
 
 class Request
 
@@ -7,7 +8,8 @@ class Request
     @pathname = '/v1/'
     @host = 'api.500px.com'
 
-  get: (path, params = {}, cb) ->
+  get: (path, params = {}) ->
+    deferred = W.defer()
     params.consumer_key = @consumer_key
 
     req_url = url.format
@@ -19,11 +21,12 @@ class Request
     https.get req_url, (res) ->
       if res.statusCode and res.statusCode is 200
         chunks = ''
-        res.on('data', (resultData) -> chunks += resultData)
-        res.on('end', -> cb(null, JSON.parse(chunks)))
+        res.on('data', (data) -> chunks += data)
+        res.on('end', -> deferred.resolve(JSON.parse(chunks)))
       else
-        cb(code: res.StatusCode)
+        deferred.reject(new Error(res))
+    .on('error', deferred.reject.bind(deferred))
 
-    .on('error', cb)
+    return deferred.promise
 
 module.exports = Request

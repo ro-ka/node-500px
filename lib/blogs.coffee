@@ -5,29 +5,24 @@ class Blogs
   constructor: (consumer_key) ->
     @request = new Request(consumer_key)
 
-  getById: (id, params = {}, cb) ->
-    if typeof params is 'function' then cb = params; params = {}
-    @request.get("blogs/#{id}", params, cb)
+  getById: (id, params = {}) ->
+    @request.get("blogs/#{id}", params)
 
-  getCommentsById: (id, params = {}, cb) ->
-    if typeof params is 'function' then cb = params; params = {}
-    @request.get("blogs/#{id}/comments", params, cb)
+  getCommentsById: (id, params = {}) ->
+    @request.get("blogs/#{id}/comments", params)
 
   getFresh: (params = {}, cb) ->
-    if typeof params is 'function' then cb = params; params = {}
     params.feature = 'fresh'
-    @request.get('blogs', params, cb)
+    @request.get('blogs', params)
 
-  getByUsername: (username, params = {}, cb) ->
-    if typeof params is 'function' then cb = params; params = {}
+  getByUsername: (username, params = {}) ->
     params.feature = 'user'
     params.username = username
-    @request.get('blogs', params, cb)
+    @request.get('blogs', params)
 
-  getByUserId: (user_id, params = {}, cb) ->
-    if typeof params is 'function' then cb = params; params = {}
+  getByUserId: (user_id, params = {}) ->
     params.feature = 'user'
     params.user_id = user_id
-    @request.get('blogs', params, cb)
+    @request.get('blogs', params)
 
 module.exports = Blogs

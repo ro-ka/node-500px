@@ -34,5 +34,8 @@
       "type": "MIT",
       "url": "http://github.com/ro-ka/node-500px/raw/master/LICENSE"
     }
-  ]
+  ],
+  "dependencies": {
+    "when": "3.x"
+  }
 }
