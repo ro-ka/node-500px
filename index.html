@@ -4,9 +4,9 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -31,50 +31,45 @@
         <hr>
 
         <section id="main_content">
-          <h1>node-500px.</h1>
+          <h1>
+<a name="node-500px" class="anchor" href="#node-500px"><span class="octicon octicon-link"></span></a>node-500px.</h1>
 
 <p>This plugin is a wrapper for the API of <a href="http://500px.com">500px.com</a>. To get more details on what the API offers, go to <a href="http://developer.500px.com/">developer.500px.com</a>.</p>
 
-<h2>Install</h2>
+<h2>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
 
 <p>The easiest way is to install through npm:</p>
 
-<div class="highlight">
-<pre>npm install 500px
-</pre>
-</div>
-
+<div class="highlight highlight-bash"><pre>npm install 500px
+</pre></div>
 
 <p>Of course you can also clone via git or download the .zip or .tar.gz via the links above.</p>
 
-<h2>Getting started</h2>
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting started</h2>
 
 <p>Include the module in your project and initialize it:</p>
 
-<div class="highlight">
-<pre><span class="kd">var</span> <span class="nx">API500px</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'500px'</span><span class="p">).</span><span class="nx">API500px</span><span class="p">,</span>
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">API500px</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'500px'</span><span class="p">),</span>
     <span class="nx">api500px</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">API500px</span><span class="p">(</span><span class="nx">consumer_key</span><span class="p">);</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>Now you are ready to do some calls to the 500px.com API!</p>
 
-<h2>GET photos</h2>
+<h2>
+<a name="get-photos" class="anchor" href="#get-photos"><span class="octicon octicon-link"></span></a>GET photos</h2>
 
 <p>To retrieve photos, just do the following:</p>
 
-<div class="highlight">
-<pre><span class="nx">api500px</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">getPopular</span><span class="p">({</span><span class="s1">'sort'</span><span class="o">:</span> <span class="s1">'created_at'</span><span class="p">,</span> <span class="s1">'rpp'</span><span class="o">:</span> <span class="s1">'100'</span><span class="p">},</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">api500px</span><span class="p">.</span><span class="nx">photos</span><span class="p">.</span><span class="nx">getPopular</span><span class="p">({</span><span class="s1">'sort'</span><span class="o">:</span> <span class="s1">'created_at'</span><span class="p">,</span> <span class="s1">'rpp'</span><span class="o">:</span> <span class="s1">'100'</span><span class="p">},</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Error!</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="c1">// Do something</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>Choose on of the funtions to get photos:</p>
 
@@ -96,21 +91,19 @@
 <li><code>searchByTerm (term, arguments, callback)</code></li>
 </ul><p>For more information on the possible arguments, please check the <a href="http://developer.500px.com/docs/photos-index">500px.com photos API</a></p>
 
-<h2>GET users</h2>
+<h2>
+<a name="get-users" class="anchor" href="#get-users"><span class="octicon octicon-link"></span></a>GET users</h2>
 
 <p>To retrieve users, just do the following:</p>
 
-<div class="highlight">
-<pre><span class="nx">api500px</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="mi">1234</span><span class="p">,</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">api500px</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="mi">1234</span><span class="p">,</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Error!</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="c1">// Do something</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>Choose on of the funtions to get users:</p>
 
@@ -121,21 +114,19 @@
 <li><code>getFriendsById (id, arguments, callback)</code></li>
 </ul><p>For more information on the possible arguments, please check the <a href="http://developer.500px.com/docs/users-index">500px.com users API</a></p>
 
-<h2>GET blogs</h2>
+<h2>
+<a name="get-blogs" class="anchor" href="#get-blogs"><span class="octicon octicon-link"></span></a>GET blogs</h2>
 
 <p>To retrieve blogs, just do the following:</p>
 
-<div class="highlight">
-<pre><span class="nx">api500px</span><span class="p">.</span><span class="nx">blogs</span><span class="p">.</span><span class="nx">getFresh</span><span class="p">({</span><span class="nx">rpp</span><span class="o">:</span> <span class="mi">50</span><span class="p">},</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">api500px</span><span class="p">.</span><span class="nx">blogs</span><span class="p">.</span><span class="nx">getFresh</span><span class="p">({</span><span class="nx">rpp</span><span class="o">:</span> <span class="mi">50</span><span class="p">},</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Error!</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="c1">// Do something</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>Choose on of the funtions to get blogs:</p>
 
@@ -150,7 +141,7 @@
 
         <footer>
           Node-500px is maintained by <a href="https://github.com/ro-ka">ro-ka</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
 
                   <script type="text/javascript">
