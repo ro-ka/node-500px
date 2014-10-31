@@ -1,5 +1,9 @@
 # Changelog
 
+### v0.4.1 / October 31, 2014
+
+  * Fix handling of errors in requests
+
 ### v0.4.0 / September 02, 2014
 
   * **Breaking**: Include works directly
