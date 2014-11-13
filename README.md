@@ -57,6 +57,7 @@ Choose on of the funtions to get photos:
 * `getFreshWeek (arguments, callback)`
 * `searchByTag (tag, arguments, callback)`
 * `searchByTerm (term, arguments, callback)`
+* `searchByGeo (geo, arguments, callback)`
 
 For more information on the possible arguments, please check the [500px.com photos API](http://developer.500px.com/docs/photos-index)
 
