@@ -219,4 +219,20 @@ describe('Testing GET photos:', function() {
       });
     });
   });
+
+  describe('#searchWithMultiImageSize()', function() {
+    it('should return a json with photos', function(done) {
+      photos.searchByGeo('37,126,100km', {
+        'rpp': 7, 'image_size[]': [1, 4]
+      }, function(err, result) {
+        should.not.exist(err);
+        should.exist(result);
+        result.should.have.property('photos');
+        result.photos.should.have.lengthOf(7);
+        result.photos[0].images.should.have.lengthOf(2);
+
+        done();
+      });
+    });
+  });
 });
